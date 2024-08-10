@@ -1,0 +1,11 @@
+Define Relationships Between Tables
+C1. Multimap return types
+@Query(
+    "SELECT * FROM student" +
+    "JOIN course ON student.id = course.student_id"
+)
+fun loadStudentsWithEnrolledCourses(): Map<Student, List<Course>>
+=> lot of complex SQL queries
+
+C2: Intermediate data class
+Idea: create a data class to model the relationship between your Room entities.
