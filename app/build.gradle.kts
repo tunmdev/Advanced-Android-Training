@@ -60,10 +60,17 @@ dependencies {
 
     // optional - RxJava2 support for Room
     implementation("androidx.room:room-rxjava2:$room_version")
+    implementation ("io.reactivex.rxjava2:rxandroid:2.0.1")
 
     // optional - Test helpers
     testImplementation("androidx.room:room-testing:$room_version")
 
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:$room_version")
+
+
+    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation ("com.google.truth:truth:1.0.1")
+    androidTestImplementation ("android.arch.core:core-testing:1.0.0")
 }
