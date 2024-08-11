@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidAdvance"
 include(":app")
+include(":rxjavatrainning")

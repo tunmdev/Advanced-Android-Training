@@ -5,6 +5,7 @@ import com.tunm17.androidadvance.data.entity.Course
 import com.tunm17.androidadvance.domain.repository.CourseRepository
 import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Maybe
 import io.reactivex.Single
 
 class CourseRepositoryImpl(private val courseDao: CourseDao): CourseRepository {
@@ -16,7 +17,7 @@ class CourseRepositoryImpl(private val courseDao: CourseDao): CourseRepository {
         return courseDao.getCourseById(courseId)
     }
 
-    override fun getAllCourses(): Single<List<Course>> {
+    override fun getAllCourses(): Maybe<List<Course>> {
         return courseDao.getAllCourses()
     }
 }

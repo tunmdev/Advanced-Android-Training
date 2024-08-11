@@ -5,6 +5,7 @@ import com.tunm17.androidadvance.data.dao.StudentWithCoursesDao
 import com.tunm17.androidadvance.data.entity.Student
 import com.tunm17.androidadvance.data.entity.StudentWithCourses
 import com.tunm17.androidadvance.domain.repository.StudentRepository
+import io.reactivex.Maybe
 import io.reactivex.Single
 
 class StudentRepositoryImpl(
@@ -19,7 +20,7 @@ class StudentRepositoryImpl(
         return studentDao.getStudentById(studentId)
     }
 
-    override fun getAllStudents(): Single<List<Student>> {
+    override fun getAllStudents(): Maybe<List<Student>> {
         return studentDao.getAllStudents()
     }
 

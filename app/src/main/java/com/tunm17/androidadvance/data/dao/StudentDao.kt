@@ -10,6 +10,7 @@ import com.tunm17.androidadvance.data.entity.StudentAndContactInfo
 import com.tunm17.androidadvance.data.entity.StudentWithCourses
 import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Maybe
 import io.reactivex.Single
 
 /**
@@ -26,7 +27,7 @@ interface StudentDao {
     fun getStudentById(studentId: Int): Single<Student>
 
     @Query("SELECT * FROM student")
-    fun getAllStudents(): Single<List<Student>>
+    fun getAllStudents(): Maybe<List<Student>>
 
     @Insert
     fun insert(student: Student): Single<Long>

@@ -1,0 +1,12 @@
+What is Backpressure?
+Backpressure is the process of handling an emitter that will produce a lot of items very fast.
+Let’s say an Observable produces 100000 items per second, how will a subscriber that can only handle 100 items per second process those items?
+=> OutOfMemoryException
+
+Khi Nên Sử Dụng Single
+Insert Operations: Khi thực hiện các thao tác chèn (insert), bạn thường sẽ muốn nhận về ID của bản ghi mới được chèn vào hoặc thông báo lỗi nếu chèn thất bại.
+Single là lựa chọn tốt cho trường hợp này vì luôn có một giá trị hoặc lỗi được phát ra.
+
+Khi Nên Sử Dụng Maybe
+Query Operations: Khi truy vấn dữ liệu, có thể bạn không tìm thấy bất kỳ kết quả nào (ví dụ, không có học sinh nào trong trường).
+Trong trường hợp này, Maybe là lựa chọn tốt vì nó có thể phát ra một giá trị, không có giá trị (onComplete) hoặc lỗi.

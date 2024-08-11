@@ -9,6 +9,7 @@ import com.tunm17.androidadvance.data.entity.Course
 import com.tunm17.androidadvance.data.entity.School
 import com.tunm17.androidadvance.data.entity.SchoolWithStudents
 import io.reactivex.Completable
+import io.reactivex.Maybe
 import io.reactivex.Single
 
 @Dao
@@ -20,5 +21,5 @@ interface CourseDao {
     fun getCourseById(courseId: Int): Single<Course>
 
     @Query("SELECT * FROM course")
-    fun getAllCourses(): Single<List<Course>>
+    fun getAllCourses(): Maybe<List<Course>>
 }

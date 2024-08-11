@@ -9,6 +9,7 @@ import com.tunm17.androidadvance.data.entity.Course
 import com.tunm17.androidadvance.data.entity.School
 import com.tunm17.androidadvance.data.entity.SchoolWithStudents
 import io.reactivex.Completable
+import io.reactivex.Maybe
 import io.reactivex.Single
 
 @Dao
@@ -18,7 +19,7 @@ interface SchoolDao {
     fun insertSchool(school: School): Single<Long>
 
     @Query("SELECT * FROM school")
-    fun getAllSchools(): Single<List<School>>
+    fun getAllSchools(): Maybe<List<School>>
 
     @Query("SELECT * FROM school WHERE school_id = :schoolId")
     fun getSchoolById(schoolId: Int): Single<School>

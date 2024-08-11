@@ -3,6 +3,7 @@ package com.tunm17.androidadvance.data.repository
 import com.tunm17.androidadvance.data.dao.SchoolDao
 import com.tunm17.androidadvance.data.entity.School
 import com.tunm17.androidadvance.domain.repository.SchoolRepository
+import io.reactivex.Maybe
 import io.reactivex.Single
 
 class SchoolRepositoryImpl(private val schoolDao: SchoolDao) : SchoolRepository {
@@ -14,7 +15,7 @@ class SchoolRepositoryImpl(private val schoolDao: SchoolDao) : SchoolRepository 
         return schoolDao.getSchoolById(schoolId)
     }
 
-    override fun getAllSchools(): Single<List<School>> {
+    override fun getAllSchools(): Maybe<List<School>> {
         return schoolDao.getAllSchools()
     }
 }

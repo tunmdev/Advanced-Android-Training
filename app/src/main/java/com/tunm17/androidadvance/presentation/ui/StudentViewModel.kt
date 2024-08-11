@@ -11,6 +11,7 @@ import com.tunm17.androidadvance.domain.repository.SchoolRepository
 import com.tunm17.androidadvance.domain.repository.StudentCourseCrossRefRepository
 import com.tunm17.androidadvance.domain.repository.StudentRepository
 import io.reactivex.Completable
+import io.reactivex.Maybe
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -34,7 +35,7 @@ class StudentViewModel(
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    fun getAllSchools(): Single<List<School>> {
+    fun getAllSchools(): Maybe<List<School>> {
         return schoolRepository.getAllSchools()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -53,7 +54,7 @@ class StudentViewModel(
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    fun getAllCourses(): Single<List<Course>> {
+    fun getAllCourses(): Maybe<List<Course>> {
         return courseRepository.getAllCourses()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -72,7 +73,7 @@ class StudentViewModel(
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    fun getAllStudents(): Single<List<Student>> {
+    fun getAllStudents(): Maybe<List<Student>> {
         return studentRepository.getAllStudents()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
