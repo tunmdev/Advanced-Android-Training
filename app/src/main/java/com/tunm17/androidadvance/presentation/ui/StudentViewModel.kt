@@ -10,13 +10,17 @@ import com.tunm17.androidadvance.domain.repository.CourseRepository
 import com.tunm17.androidadvance.domain.repository.SchoolRepository
 import com.tunm17.androidadvance.domain.repository.StudentCourseCrossRefRepository
 import com.tunm17.androidadvance.domain.repository.StudentRepository
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.Completable
 import io.reactivex.Maybe
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
-class StudentViewModel(
+@HiltViewModel
+class StudentViewModel @Inject constructor(
     private val schoolRepository: SchoolRepository,
     private val courseRepository: CourseRepository,
     private val studentRepository: StudentRepository,

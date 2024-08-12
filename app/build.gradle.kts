@@ -59,6 +59,8 @@ dependencies {
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
 
+    implementation("androidx.room:room-rxjava2:$room_version")
+
     // optional - RxJava3 support for Room
     implementation("androidx.room:room-rxjava3:$room_version")
     implementation ("io.reactivex.rxjava2:rxandroid:2.0.1")
@@ -76,8 +78,10 @@ dependencies {
     androidTestImplementation ("android.arch.core:core-testing:1.0.0")
 
     // Dagger hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+    implementation("androidx.fragment:fragment-ktx:1.8.2")
 }
 
 // Allow references to generated code

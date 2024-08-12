@@ -5,8 +5,11 @@ import com.tunm17.androidadvance.data.entity.School
 import com.tunm17.androidadvance.domain.repository.SchoolRepository
 import io.reactivex.Maybe
 import io.reactivex.Single
+import javax.inject.Inject
 
-class SchoolRepositoryImpl(private val schoolDao: SchoolDao) : SchoolRepository {
+class SchoolRepositoryImpl @Inject constructor(
+    private val schoolDao: SchoolDao
+) : SchoolRepository {
     override fun insertSchool(school: School): Single<Long> {
         return schoolDao.insertSchool(school)
     }

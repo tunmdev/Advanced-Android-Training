@@ -7,8 +7,11 @@ import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Maybe
 import io.reactivex.Single
+import javax.inject.Inject
 
-class CourseRepositoryImpl(private val courseDao: CourseDao): CourseRepository {
+class CourseRepositoryImpl @Inject constructor(
+    private val courseDao: CourseDao
+): CourseRepository {
     override fun insertCourse(course: Course): Single<Long> {
         return courseDao.insertCourse(course)
     }

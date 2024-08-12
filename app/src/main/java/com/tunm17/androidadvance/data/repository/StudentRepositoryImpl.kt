@@ -7,8 +7,9 @@ import com.tunm17.androidadvance.data.entity.StudentWithCourses
 import com.tunm17.androidadvance.domain.repository.StudentRepository
 import io.reactivex.Maybe
 import io.reactivex.Single
+import javax.inject.Inject
 
-class StudentRepositoryImpl(
+class StudentRepositoryImpl @Inject constructor(
     private val studentDao: StudentDao,
     private val studentWithCoursesDao: StudentWithCoursesDao
 ) : StudentRepository {
